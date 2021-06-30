@@ -158,53 +158,52 @@
 // (Ejercicio: Solicitar al usuario que ingrese su edad y una bebida. (Entre: Cerveza, jugo, agua). Si pide alcohol y es menor de edad que le salte un alerta indicando que no puede realizar la compra. Indicar el costo y solicitar al usuario que indique con cuanto va a pagar e indicar cuánto sería su vuelto. 
 // (Ej: La cerveza cuesta $50  y paga con 100, se le debe devolver $50. Si indica que paga con menos de lo que cuesta el producto, indicar un error).)
 
-const precioCerveza = 80;
-const precioJugo = 60;
-const precioAgua = 40;
-let precio = 0;
-let pago = 0;
+// const precioCerveza = 80;
+// const precioJugo = 60;
+// const precioAgua = 40;
+// let precio = 0;
+// let pago = 0;
 
-function verificadorEdad(edadCliente, choice) {
-    if (edadCliente < 18 && choice === 1) {
-        return alert("Usted es menor de edad. No puede comprar alcohol.");
-    } else {
-        pago = parseFloat(prompt("El precio de su bebida es de $" + precio + ". ¿Con cuánto va a abonar?"));
-        cobrador(pago, precio);    
-    }
-}
+// function verificadorEdad(edadCliente, choice) {
+//     if (edadCliente < 18 && choice === 1) {
+//         return alert("Usted es menor de edad. No puede comprar alcohol.");
+//     } else {
+//         pago = parseFloat(prompt("El precio de su bebida es de $" + precio + ". ¿Con cuánto va a abonar?"));
+//         cobrador(pago, precio);    
+//     }
+// }
 
-function cobrador(dinero, costoItem) {
-    if (dinero < costoItem) {
-        alert("No le alcanza para pagar su bebida!!");
-    } else if (dinero === costoItem) {
-        alert("Gracias por su compra. Pagó con cambio justo, no recibe vuelto.");
-    } else {
-        alert("Gracias por su compra. Su vuelto es de $" + (dinero - costoItem) + ".");
-    }   
-}
+// function cobrador(dinero, costoItem) {
+//     if (dinero < costoItem) {
+//         alert("No le alcanza para pagar su bebida!!");
+//     } else if (dinero === costoItem) {
+//         alert("Gracias por su compra. Pagó con cambio justo, no recibe vuelto.");
+//     } else {
+//         alert("Gracias por su compra. Su vuelto es de $" + (dinero - costoItem) + ".");
+//     }   
+// }
 
 
-let edad = parseInt(prompt("Ingrese su edad:"));
-let bebida = parseInt(prompt("Ingrese el número de la bebida que desea. Disponemos de:" + "\n" +
-     "1. Cerveza" + "\n" + 
-     "2. Jugo" + "\n" +
-     "3. Agua"));
-switch(bebida) {
-    case 1:        
-        precio = precioCerveza;        
-        break;
-    case 2:        
-        precio = precioJugo;        
-        break;
-    case 3:        
-        precio = precioAgua;        
-        break;
-    default:
-        alert("El dato ingresado no es válido.");
-        break;
-}
-verificadorEdad(edad, bebida);
-
+// let edad = parseInt(prompt("Ingrese su edad:"));
+// let bebida = parseInt(prompt("Ingrese el número de la bebida que desea. Disponemos de:" + "\n" +
+//      "1. Cerveza" + "\n" + 
+//      "2. Jugo" + "\n" +
+//      "3. Agua"));
+// switch(bebida) {
+//     case 1:        
+//         precio = precioCerveza;        
+//         break;
+//     case 2:        
+//         precio = precioJugo;        
+//         break;
+//     case 3:        
+//         precio = precioAgua;        
+//         break;
+//     default:
+//         alert("El dato ingresado no es válido.");
+//         break;
+// }
+// verificadorEdad(edad, bebida);
 
 
 
@@ -215,13 +214,52 @@ verificadorEdad(edad, bebida);
 // ************ EJERCICIO 7 ************
 // Crear una función que reciba tres parámetros: Horas, minutos y segundos, y devolver todo pasado a segundos.
 
+// let horas;
+// let minutos;
+// let segundos;
+// let total;
+// function conversor(hrs, min, seg){
+//     hrs = ((hrs * 60) * 60);
+//     min = min * 60;
+//     seg = seg;    
+//     total = hrs + min + seg;
+//     return alert("El total de tiempo ingresado equivale a " + total + " segundos!");
+// }
 
+// horas = parseInt(prompt("Ingrese una cantidad de horas:"));
+// minutos = parseInt(prompt("Ingrese una cantidad de minutos:"));
+// segundos = parseInt(prompt("Ingrese una cantidad de segundos:"));
+// conversor(horas, minutos, segundos);
 
 
 
 
 // ************ EJERCICIO 8 ************
 // Realizar una función de carga de notas en un array. Luego realizar otra función que calcule el promedio de todas y lo devuelva. 
+
+// PRIMERA CONSIGNA: crear funcion carga de notas en array.
+// function listaNotasMaker(nota) {
+//     let lista = [];
+//     lista.push(nota);
+//     console.log(lista);
+//     let confirma = confirm("¿Desea agregar otra calificación?");
+//     while (confirma) {
+//         nota = prompt("Ingrese la calificación que desee agregar a la lista:"); 
+//         lista.push(nota); 
+//         console.log(lista);
+//         confirma = confirm("¿Desea agregar otra calificación?");
+//     }
+//     alert("La/s nota/s ingresada/s en la lista es/son: " + lista);     
+// }
+
+// let notasAlumnos = prompt("Ingrese la calificación que desee agregar a la lista:");
+// listaNotasMaker(notasAlumnos);
+
+// SEGUNDA CONSIGNA: crear funcion que calcule el promedio de las notas y lo muestre.
+
+
+
+
 
 
 
