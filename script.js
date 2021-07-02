@@ -237,27 +237,28 @@
 // ************ EJERCICIO 8 ************
 // Realizar una función de carga de notas en un array. Luego realizar otra función que calcule el promedio de todas y lo devuelva. 
 
-// PRIMERA CONSIGNA: crear funcion carga de notas en array.
-// function listaNotasMaker(nota) {
-//     let lista = [];
-//     lista.push(nota);
-//     console.log(lista);
-//     let confirma = confirm("¿Desea agregar otra calificación?");
-//     while (confirma) {
-//         nota = prompt("Ingrese la calificación que desee agregar a la lista:"); 
-//         lista.push(nota); 
-//         console.log(lista);
-//         confirma = confirm("¿Desea agregar otra calificación?");
-//     }
-//     alert("La/s nota/s ingresada/s en la lista es/son: " + lista);     
-// }
+function listaNotasMaker() {
+    let lista = [];    
+    let confirma = true;
+    while (confirma) {
+        nota = parseInt(prompt("Ingrese la calificación que desee agregar a la lista:")); 
+        lista.push(nota); 
+        console.log(lista);
+        confirma = confirm("¿Desea agregar otra calificación?");
+    }
+    alert("La/s nota/s ingresada/s en la lista es/son: " + lista);             
+    return promedio(lista);
+}
 
-// let notasAlumnos = prompt("Ingrese la calificación que desee agregar a la lista:");
-// listaNotasMaker(notasAlumnos);
+function promedio (array) {
+        let suma = 0;        
+        for (let i=0; i<array.length;i++) {
+        suma = suma + (array[i]);                
+        }
+        return alert("El promedio es: " + (suma/array.length));
+}
 
-// SEGUNDA CONSIGNA: crear funcion que calcule el promedio de las notas y lo muestre.
-
-
+listaNotasMaker();
 
 
 
