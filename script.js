@@ -237,30 +237,52 @@
 // ************ EJERCICIO 8 ************
 // Realizar una función de carga de notas en un array. Luego realizar otra función que calcule el promedio de todas y lo devuelva. 
 
-function listaNotasMaker() {
-    let lista = [];    
-    let confirma = true;
-    while (confirma) {
-        nota = parseInt(prompt("Ingrese la calificación que desee agregar a la lista:")); 
-        lista.push(nota); 
-        console.log(lista);
-        confirma = confirm("¿Desea agregar otra calificación?");
-    }
-    alert("La/s nota/s ingresada/s en la lista es/son: " + lista);             
-    return promedio(lista);
-}
+// function listaNotasMaker() {
+//     let lista = [];    
+//     let confirma = true;
+//     while (confirma) {
+//         nota = parseInt(prompt("Ingrese la calificación que desee agregar a la lista:")); 
+//         lista.push(nota);         
+//         confirma = confirm("¿Desea agregar otra calificación?");
+//     }
+//     alert("La/s nota/s ingresada/s en la lista es/son: " + lista);             
+//     return promedio(lista);
+// }
 
-function promedio (array) {
-        let suma = 0;        
-        for (let i=0; i<array.length;i++) {
-        suma = suma + (array[i]);                
-        }
-        return alert("El promedio es: " + (suma/array.length));
-}
+// function promedio (array) {
+//         let suma = 0;        
+//         for (let i=0; i < array.length; i++) {
+//         suma = suma + (array[i]);                
+//         }
+//         return alert("El promedio es: " + (suma/array.length));
+// }
 
-listaNotasMaker();
+// listaNotasMaker();
 
+        // ····· OTRA MANERA ·····
+// function listaNotasMaker() {
+//         let lista = [];    
+//         let confirma = true;
+//         while (confirma) {
+//             nota = parseInt(prompt("Ingrese la calificación que desee agregar a la lista:")); 
+//             lista.push(nota);         
+//             confirma = confirm("¿Desea agregar otra calificación?");
+//         }
+//         alert("La/s nota/s ingresada/s en la lista es/son: " + lista);
+//         return lista;
+// }
 
+// let notasAlumnos = listaNotasMaker();
+
+// function promedio (array) {
+//         let suma = 0;        
+//         for (let i=0; i < array.length; i++) {
+//         suma = suma + (array[i]);                
+//         }
+//         return alert("El promedio es: " + (suma/array.length));
+// }
+    
+// promedio(notasAlumnos);
 
 
 
@@ -271,6 +293,48 @@ listaNotasMaker();
 // * Se solicite un monto de descuento a aplicar, y lo aplique.
 // * Finalmente, realice el cobro solicitando al usuario con cuánto desea abonar.
 
+let montoIVA = 0;
+function condIva () {
+        let montoCobrar = parseFloat(prompt("Ingrese el monto a cobrar:"));        
+        let categoria = parseInt(prompt("Para factura 'A' ingrese 1. Para factura 'B' ingrese 2:"));
+        if (categoria === 1) {
+                montoIVA = montoCobrar * 1.21;                
+        } else if (categoria === 2) {
+                montoIVA = montoCobrar;
+        } else {
+                alert("La opción ingresada no es válida!");
+        }
+        alert("El monto de la factura es de $" + montoIVA);
+        return descuento(montoIVA);
+}
+
+let montoConDescuento = 0;
+function descuento () {        
+        let valorDescuento = parseFloat(prompt("Ingrese el valor del porcentaje de descuento a aplicar"));
+        if (valorDescuento === 0) {
+                montoConDescuento = montoIVA;
+                alert("El monto de la factura con descuento es de $" + montoConDescuento);
+        } else {
+                montoConDescuento = montoIVA -  (montoIVA * valorDescuento / 100);
+                alert("El monto de la factura con descuento es de $" + montoConDescuento);
+        }
+        return cobrador(montoConDescuento);
+}
+
+let pago = 0;
+function cobrador () {
+        let pago = parseFloat(prompt("¿Con cuánto va a pagar?"));
+        if (pago > montoConDescuento) {
+              return alert("Gracias por su compra. Su vuelto es de $" + (pago - montoConDescuento));
+        } else if (pago === montoConDescuento) {
+              return alert("Gracias por pagar con cambio justo!");
+        } else if (pago < montoConDescuento){
+             return alert("Sus $" + pago + " , no le alcanzan para pagar su comnpra de $" + montoConDescuento + "!");
+        }
+        
+}
+
+condIva();
 
 
 
