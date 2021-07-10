@@ -293,65 +293,113 @@
 // * Se solicite un monto de descuento a aplicar, y lo aplique.
 // * Finalmente, realice el cobro solicitando al usuario con cuánto desea abonar.
 
-let montoIVA = 0;
-function condIva () {
-        let montoCobrar = parseFloat(prompt("Ingrese el monto a cobrar:"));        
-        let categoria = parseInt(prompt("Para factura 'A' ingrese 1. Para factura 'B' ingrese 2:"));
-        if (categoria === 1) {
-                montoIVA = montoCobrar * 1.21;                
-        } else if (categoria === 2) {
-                montoIVA = montoCobrar;
-        } else {
-                alert("La opción ingresada no es válida!");
-        }
-        alert("El monto de la factura es de $" + montoIVA);
-        return descuento(montoIVA);
-}
+// let montoIVA = 0;
+// function condIva () {
+//         let montoCobrar = parseFloat(prompt("Ingrese el monto a cobrar:"));        
+//         let categoria = parseInt(prompt("Para factura 'A' ingrese 1. Para factura 'B' ingrese 2:"));
+//         if (categoria === 1) {
+//                 montoIVA = montoCobrar * 1.21;                
+//         } else if (categoria === 2) {
+//                 montoIVA = montoCobrar;
+//         } else {
+//                 alert("La opción ingresada no es válida!");
+//         }
+//         alert("El monto de la factura es de $" + montoIVA);
+//         return descuento(montoIVA);
+// }
 
-let montoConDescuento = 0;
-function descuento () {        
-        let valorDescuento = parseFloat(prompt("Ingrese el valor del porcentaje de descuento a aplicar"));
-        if (valorDescuento === 0) {
-                montoConDescuento = montoIVA;
-                alert("El monto de la factura con descuento es de $" + montoConDescuento);
-        } else {
-                montoConDescuento = montoIVA -  (montoIVA * valorDescuento / 100);
-                alert("El monto de la factura con descuento es de $" + montoConDescuento);
-        }
-        return cobrador(montoConDescuento);
-}
+// let montoConDescuento = 0;
+// function descuento () {        
+//         let valorDescuento = parseFloat(prompt("Ingrese el valor del porcentaje de descuento a aplicar"));
+//         if (valorDescuento === 0) {
+//                 montoConDescuento = montoIVA;
+//                 alert("El monto de la factura con descuento es de $" + montoConDescuento);
+//         } else {
+//                 montoConDescuento = montoIVA -  (montoIVA * valorDescuento / 100);
+//                 alert("El monto de la factura con descuento es de $" + montoConDescuento);
+//         }
+//         return cobrador(montoConDescuento);
+// }
 
-let pago = 0;
-function cobrador () {
-        let pago = parseFloat(prompt("¿Con cuánto va a pagar?"));
-        if (pago > montoConDescuento) {
-              return alert("Gracias por su compra. Su vuelto es de $" + (pago - montoConDescuento));
-        } else if (pago === montoConDescuento) {
-              return alert("Gracias por pagar con cambio justo!");
-        } else if (pago < montoConDescuento){
-             return alert("Sus $" + pago + " , no le alcanzan para pagar su comnpra de $" + montoConDescuento + "!");
-        }
+// let pago = 0;
+// function cobrador () {
+//         let pago = parseFloat(prompt("¿Con cuánto va a pagar?"));
+//         if (pago > montoConDescuento) {
+//               return alert("Gracias por su compra. Su vuelto es de $" + (pago - montoConDescuento));
+//         } else if (pago === montoConDescuento) {
+//               return alert("Gracias por pagar con cambio justo!");
+//         } else if (pago < montoConDescuento){
+//              return alert("Sus $" + pago + " , no le alcanzan para pagar su compra de $" + montoConDescuento + "!");
+//         }
         
-}
+// }
 
-condIva();
+// condIva();
 
 
 
-// ************ EJERCICIO 10 ************
-// Vamos a realizar (intentando no llorar) un conversor de monedas. Primero vamos a generar una función que reciba dos parámetros, tipo de moneda y monto y la convierta a pesos. (Tipos de moneda aceptados dólares, euros y reales). 
-// Luego vamos a realizar una función que llame a esta función dos veces, con parámetros diferentes, sume ambos valores y devuelva el resultado.
-// Ejemplo: us$4, €3. Devuelve el total de: $1180. (Dificil no llorar a este punto). 
+// // ************ EJERCICIO 10 ************
+// // Vamos a realizar (intentando no llorar) un conversor de monedas. Primero vamos a generar una función que reciba dos parámetros, tipo de moneda y monto y la convierta a pesos. (Tipos de moneda aceptados dólares, euros y reales). 
+// // Luego vamos a realizar una función que llame a esta función dos veces, con parámetros diferentes, sume ambos valores y devuelva el resultado.
+// // Ejemplo: us$4, €3. Devuelve el total de: $1180. (Dificil no llorar a este punto). 
 
+// const dolar = 99;
+// const euro = 115;
+// const real = 19;
+
+// function conversor () {
+//         let pesos;
+//         let moneda = parseInt(prompt("¿Qué moneda desea comprar? \n1. Dólares \n2. Euros \n3. Reales"));
+//         let monto = parseInt(prompt("Ingrese el monto de moneda extranjera que desea comprar:"));
+//         if (moneda === 1) {
+//                 pesos = monto * dolar;                
+//         } else if (moneda === 2) {
+//                 pesos = monto * euro;                
+//         } else if (moneda === 3) {
+//                 pesos = monto * real;
+//         }
+//         return pesos;
+// }
+
+// function llamarConversor () {
+//         let totalPesos;
+//         let parcialPesos1 = conversor();        
+//         console.log("El total de pesos de la primera operación es de: " + parcialPesos1);
+//         totalPesos = parcialPesos1        
+//         let parcialPesos2 = conversor();
+//         console.log("El total de pesos de la segunda operación es de: " + parcialPesos2);
+//         totalPesos = totalPesos + parcialPesos2;
+//         return alert("El total de pesos requeridos para ambas operaciones es de: " + totalPesos);        
+// }
+
+// llamarConversor ();
 
 
 
 
 
 // ************ EJERCICIO 11 ************
-// Crear una función con 1 parámetro cantidad de números, que pida iterativamente la cantidad de veces ingresada. Ejemplo si por parámetro le paso 5, que pida 5 números. En cada iteración aplicarle a cada número y una función que los triplique. Guardar todos los resultados en un array.
+// Crear una función con 1 parámetro cantidad de números, que pida iterativamente la cantidad de veces ingresada. Ejemplo si por parámetro le paso 5, que pida 5 números. En cada iteración aplicarle a cada número una función que los triplique. Guardar todos los resultados en un array.
 // Ejemplo: Paso por parámetro “4” a la función.
 // Luego ingreso 4 números: 30,15,11,14. El array final debe ser: 90,45,33,42.
+
+// let iteraciones = parseInt(prompt("Ingrese la cantidad de números que desea triplicar:"));
+// let contenedor1 = [];
+// let contenedor2 = [];
+
+// function multiplier (cantIteraciones) {        
+//         for (let i = 0; i < cantIteraciones; i++) {
+//         let numero = parseInt(prompt("Ingrese el número que desea triplicar:"));
+//         contenedor1.push(numero);
+//         console.log("Los números ingresados son: " + contenedor1);
+//         contenedor2.push(numero * 3);
+//         }
+//         return alert("El resultado es: " + contenedor2);
+// }
+
+// multiplier(iteraciones);
+
+
 
 
 
@@ -360,7 +408,15 @@ condIva();
 // ************ EJERCICIO 12 ************
 // Realizar una función que pida la temperatura máxima y mínima del día, indicando magnitud y medida (Farenheit o Celsius), y mostrar la temperatura media.
 
+// function tempMedia () {
+//         let sistema = prompt("Ingrese la unidad de medida de temperatura: 'C' o 'F'");
+//         let sistMayuscula = sistema.toUpperCase()
+//         let maxima = parseInt(prompt("Ingrese la temperatura máxima del día:"));
+//         let minima = parseInt(prompt("Ingrese la temperatura mínima del día:"));
+//         return alert("La temperatura media de día es " + ((maxima + minima) / 2 + sistMayuscula));
+// }
 
+// tempMedia ();
 
 
 
